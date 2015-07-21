@@ -24,7 +24,7 @@ System.config({
     "i18next": "github:i18next/i18next@1.10.2",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:aurelia/event-aggregator@0.6.1": {
-      "aurelia-logging": "github:aurelia/logging@0.6.0"
+      "aurelia-logging": "github:aurelia/logging@0.6.1"
     },
     "github:aurelia/loader-default@0.7.0": {
       "aurelia-loader": "github:aurelia/loader@0.6.0",
