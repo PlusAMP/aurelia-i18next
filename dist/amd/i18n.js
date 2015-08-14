@@ -17,6 +17,8 @@ define(['exports', 'i18next', './utils'], function (exports, _i18next, _utils) {
     function I18N(ea) {
       _classCallCheck(this, I18N);
 
+      this.globalVars = {};
+
       this.i18next = _i18n['default'];
       this.ea = ea;
       this.Intl = window.Intl;
@@ -72,7 +74,23 @@ define(['exports', 'i18next', './utils'], function (exports, _i18next, _utils) {
     }, {
       key: 'tr',
       value: function tr(key, options) {
-        return this.i18next.t(key, (0, _utils.assignObjectToKeys)('', options));
+        var fullOptions = this.globalVars;
+
+        if (options !== undefined) {
+          fullOptions = Object.assign(Object.assign({}, this.globalVars), options);
+        }
+
+        return this.i18next.t(key, (0, _utils.assignObjectToKeys)('', fullOptions));
+      }
+    }, {
+      key: 'registerGlobalVariable',
+      value: function registerGlobalVariable(key, value) {
+        this.globalVars[key] = value;
+      }
+    }, {
+      key: 'unregisterGlobalVariable',
+      value: function unregisterGlobalVariable(key) {
+        delete this.globalVars[key];
       }
     }, {
       key: 'updateTranslations',
