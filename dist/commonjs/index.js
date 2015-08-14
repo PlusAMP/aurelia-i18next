@@ -66,10 +66,10 @@ function configure(aurelia, cb) {
     throw 'You need to provide a callback method to properly configure the library';
   }
 
-  aurelia.globalizeResources('./t');
-  aurelia.globalizeResources('./nf');
-  aurelia.globalizeResources('./df');
-  aurelia.globalizeResources('./rt');
+  aurelia.globalResources('./t');
+  aurelia.globalResources('./nf');
+  aurelia.globalResources('./df');
+  aurelia.globalResources('./rt');
 
   var ret = null,
       onIntlLoaded = function onIntlLoaded() {
